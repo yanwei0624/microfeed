@@ -65,7 +65,7 @@ export default class AdminNavApp extends React.Component {
             <a href={ADMIN_URLS.logout()} className="hover:opacity-50 text-brand-dark font-semibold text-sm">
               <div className="flex items-center justify-end">
                 <div className="mr-1"><ArrowLeftOnRectangleIcon className="w-4"/></div>
-                <div>Logout</div>
+                <div>退出登录</div>
               </div>
             </a>
           </div>

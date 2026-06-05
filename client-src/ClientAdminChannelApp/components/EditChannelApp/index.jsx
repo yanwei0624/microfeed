@@ -111,15 +111,15 @@ export default class EditChannelApp extends React.Component {
         .then((response) => {
           console.log(response);
           this.setState({submitStatus: null, changed: false}, () => {
-            showToast('Updated!', 'success');
+            showToast('已更新！', 'success');
           });
         })
         .catch((error) => {
           this.setState({submitStatus: null}, () => {
             if (!error.response) {
-              showToast('Network error. Please refresh the page and try again.', 'error');
+              showToast('网络错误，请刷新页面后重试。', 'error');
             } else {
-              showToast('Failed. Please try again.', 'error');
+              showToast('失败了，请重试。', 'error');
             }
           });
         });
@@ -206,7 +206,7 @@ export default class EditChannelApp extends React.Component {
           </div>
           <details className="lh-page-card">
             <summary className="m-page-summary">
-              Podcast-specific fields
+              播客特定字段
             </summary>
             <div className="mt-8 grid grid-cols-1 gap-8">
               <div className="grid grid-cols-3 gap-4">
@@ -301,7 +301,7 @@ export default class EditChannelApp extends React.Component {
                 onClick={this.onSubmit}
                 disabled={submitting || !changed}
               >
-                {submitting ? 'Updating...' : 'Update'}
+                {submitting ? '更新中...' : '更新'}
               </button>
             </div>
             <AdminSideQuickLinks />

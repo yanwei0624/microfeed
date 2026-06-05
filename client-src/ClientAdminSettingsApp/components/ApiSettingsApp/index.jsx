@@ -76,7 +76,7 @@ export default class ApiSettingsApp extends React.Component {
       <div className="mb-4">
         <div className="">
           <AdminSwitch
-            label="API Enabled"
+            label="API 开启"
             customLabelClass={clsx('', apiBundle.enabled ? 'text-black' : 'text-muted-color')}
             enabled={apiBundle.enabled} setEnabled={(checked) => this.setApiEnabled(checked)}
           />
@@ -88,7 +88,7 @@ export default class ApiSettingsApp extends React.Component {
           <div
             className={clsx('flex-none text-sm', !apiBundle.enabled && 'text-muted-color')}
           >
-            API Key:
+            API 密钥：
           </div>
           <div className="flex-1 mx-2">
             <AdminInput
@@ -112,12 +112,12 @@ export default class ApiSettingsApp extends React.Component {
                 }
               }}
             >
-              Reset
+              重置
             </button>
           </div>
         </div>
         <div className="text-xs mt-8">
-          How to use API key?
+          如何使用 API 密钥？
         </div>
         <div className="mt-2 text-xs text-helper-color">
           {"Set the X-MicrofeedAPI-Key header to the API key, e.g., " +

@@ -19,8 +19,8 @@ export const ITEM_CONTROLS = {
 
 export const CONTROLS_TEXTS_DICT = {
   [ITEM_CONTROLS.TITLE]: {
-    linkName: 'Title',
-    modalTitle: 'Item / Title',
+    linkName: '标题',
+    modalTitle: '项目 / 标题',
     text: "An item's title. It could be a podcast episode's title, a blog post's title, a custom title of a curated article...<br>" +
       "If it's a podcast episode, please don’t specify the episode number or season number in this tag. " +
       "Instead, specify those details in the appropriate tags ( <itunes:episode>, <itunes:season>). " +
@@ -29,8 +29,8 @@ export const CONTROLS_TEXTS_DICT = {
     json: '{ "items": [{"title": "Title Here"}] }',
   },
   [ITEM_CONTROLS.IMAGE]: {
-    linkName: 'Item image',
-    modalTitle: 'Item / Image',
+    linkName: '项目图片',
+    modalTitle: '项目 / 图片',
     text: "A square-sized image specific to this item. " +
       "If it's a podcast episode, the image size should be a minimum size of 1400 x 1400 pixels and a maximum size of 3000 x 3000 pixels, " +
       "in JPEG or PNG format, 72 dpi, with appropriate file extensions (.jpg, .png), and in the RGB colorspace - this is a requirement of Apple Podcasts.",
@@ -38,8 +38,8 @@ export const CONTROLS_TEXTS_DICT = {
     json: '{ "items": [{"image": "https://cdn-site.com/img.jpg"}] }',
   },
   [ITEM_CONTROLS.MEDIA_FILE]: {
-    linkName: 'Media file',
-    modalTitle: 'Item / Media file',
+    linkName: '媒体文件',
+    modalTitle: '项目 / 媒体文件',
     text: "An item can have a main media file. For example, if it's a podcast episode, then a media file should be an audio; " +
       "if it's a self-hosted photo album, then a media file should be a high-definition image; " +
       "if it's a content curation site, then a media file could be an external url (e.g., an article url from New York Times).<br>" +
@@ -50,22 +50,22 @@ export const CONTROLS_TEXTS_DICT = {
   },
 
   [ITEM_CONTROLS.PUB_DATE]: {
-    linkName: 'Published date',
-    modalTitle: 'Item / Published date',
-    text: "The date and time when an item was released.",
+    linkName: '发布日期',
+    modalTitle: '项目 / 发布日期',
+    text: "项目发布的日期和时间。",
     rss: '<channel><item><pubDate>Wed, 30 Nov 2022 04:31:48 GMT</pubDate></item></channel>',
     json: '{ "items": [{"date_published": "2022-11-30T04:31:31.867Z", "_microfeed": {"date_published_ms": 1669782691867, "date_published_short": "Tue Nov 29 2022"}}] }',
   },
   [ITEM_CONTROLS.LINK]: {
-    linkName: 'Link',
-    modalTitle: 'Item / Link',
-    text: "An item's web link. By default, it's a web page on your microfeed. But you can set it to fit your use case.",
+    linkName: '链接',
+    modalTitle: '项目 / 链接',
+    text: "项目的网站链接。默认为您的 microfeed 上的网页。但您可以设置为适合您的地址。",
     rss: '<channel><item><link>https://example.com/page1.html</link></item></channel>',
     json: '{ "items": [{"url": "https://example.com/page1.html"}] }',
   },
   [ITEM_CONTROLS.DESCRIPTION]: {
-    linkName: 'Description',
-    modalTitle: 'Item / Description',
+    linkName: '描述',
+    modalTitle: '项目 / 描述',
     text: "An item's description. <br>" +
       "If this is a podcast episode, you'd better limit the description length to be within 4000 characters, " +
       "or Apple Podcasts and other podcast apps/websites may truncate the text.<br>" +
@@ -75,7 +75,7 @@ export const CONTROLS_TEXTS_DICT = {
   },
   [ITEM_CONTROLS.GUID]: {
     linkName: '<guid>',
-    modalTitle: 'Item / Description',
+    modalTitle: '项目 / 描述',
     text: "An item's guid. By default, it's the id of this item. But you can set it to fit your use case.<br>" +
       "It is very important that each episode have a unique GUID and that it never changes once it's set, even if an episode’s metadata, like title or enclosure URL, do change.<br>" +
       "Failing to comply with these guidelines may result in duplicate episodes being shown to listeners, inaccurate data in Analytics, and can cause issues with your podcasts’s listing and chart placement in Apple Podcasts and other podcast apps/websites.",
@@ -84,7 +84,7 @@ export const CONTROLS_TEXTS_DICT = {
   },
   [ITEM_CONTROLS.ITUNES_EXPLICIT]: {
     linkName: '<itunes:explicit>',
-    modalTitle: 'Item / <itunes:explicit>',
+    modalTitle: '项目 / <itunes:explicit>',
     text: "The episode parental advisory information.<br>" +
       "If you specify yes, indicating the presence of explicit content, Apple Podcasts displays an Explicit parental advisory graphic for your episode. Episodes containing explicit material aren’t available in some Apple Podcasts territories.<br>" +
       "If you specify no, indicating that the episode does not contain explicit language or adult content, Apple Podcasts displays a Clean parental advisory graphic for your episode.",
@@ -93,7 +93,7 @@ export const CONTROLS_TEXTS_DICT = {
   },
   [ITEM_CONTROLS.ITUNES_TITLE]: {
     linkName: '<itunes:title>',
-    modalTitle: 'Item / <itunes:title>',
+    modalTitle: '项目 / <itunes:title>',
     text: "An episode title specific for Apple Podcasts." +
       "itunes:title is a string containing a clear concise name of your episode on Apple Podcasts.<br>" +
       "Don’t specify the episode number or season number in this tag. Instead, specify those details in the appropriate tags ( itunes:episode, itunes:season). Also, don’t repeat the title of your show within your episode title.<br>" +
@@ -103,7 +103,7 @@ export const CONTROLS_TEXTS_DICT = {
   },
   [ITEM_CONTROLS.ITUNES_EPISODE_TYPE]: {
     linkName: '<itunes:episodeType>',
-    modalTitle: 'Item / <itunes:episodeType>',
+    modalTitle: '项目 / <itunes:episodeType>',
     text: "The episode type in Apple Podcasts.<br>" +
       "If an episode is a trailer or bonus content, use this tag.<br>" +
       "Where the episodeType value can be one of the following:<br>" +
@@ -115,7 +115,7 @@ export const CONTROLS_TEXTS_DICT = {
   },
   [ITEM_CONTROLS.ITUNES_SEASON]: {
     linkName: '<itunes:season>',
-    modalTitle: 'Item / <itunes:season>',
+    modalTitle: '项目 / <itunes:season>',
     text: "The episode season number in Apple Podcasts.<br>" +
       "If an episode is within a season use this tag.<br>" +
       "Where season is a non-zero integer (1, 2, 3, etc.) representing your season number.<br>" +
@@ -125,7 +125,7 @@ export const CONTROLS_TEXTS_DICT = {
   },
   [ITEM_CONTROLS.ITUNES_EPISODE]: {
     linkName: '<itunes:episode>',
-    modalTitle: 'Item / <itunes:episode>',
+    modalTitle: '项目 / <itunes:episode>',
     text: "An episode number in Apple Podcasts.<br>" +
       "If all your episodes have numbers and you would like them to be ordered based on them, use this tag for each one.<br>" +
       "Episode numbers are optional for itunes:type episodic shows, but are mandatory for serial shows.<br>" +
@@ -136,7 +136,7 @@ export const CONTROLS_TEXTS_DICT = {
   },
   [ITEM_CONTROLS.ITUNES_BLOCK]: {
     linkName: '<itunes:block>',
-    modalTitle: 'Item / <itunes:block>',
+    modalTitle: '项目 / <itunes:block>',
     text: "The episode show or hide status on Apple Podcasts.<br>" +
       "If you want an episode removed from the Apple directory, select 'yes'.<br>" +
       "Specifying the itunes:block tag with a 'yes' value prevents that episode from appearing in Apple Podcasts.<br>" +
@@ -146,9 +146,9 @@ export const CONTROLS_TEXTS_DICT = {
     json: '{ "items": [{"_microfeed": {"itunes:block": true}}] }',
   },
   [ITEM_CONTROLS.STATUS]: {
-    linkName: 'Item status',
-    modalTitle: 'Item / status',
-    text: "An item's status is either published, unlisted, or unpublished. <ul class='list-decimal list-inside'>" +
+    linkName: '项目状态',
+    modalTitle: '项目 / 状态',
+    text: "项目的状态可以是已发布、未列出或未发布。<ul class='list-decimal list-inside'>" +
       `${Object.keys(ITEM_STATUSES_DICT).map((k) => (
         `<li>${ITEM_STATUSES_DICT[k].name}: ${ITEM_STATUSES_DICT[k].description}</li>`)).join('')}` +
       "</ul>",

@@ -46,7 +46,7 @@ export default class WebGlobalSettingsApp extends React.Component {
     const {feed, currentType, favicon, publicBucketUrl, itemsPerPage, itemsSortOrder} = this.state;
     const {submitting, submitForType, setChanged} = this.props;
     return (<SettingsBase
-      title="Web global settings"
+      title="网站全局设置"
       submitting={submitting}
       submitForType={submitForType}
       currentType={currentType}
@@ -69,7 +69,7 @@ export default class WebGlobalSettingsApp extends React.Component {
     >
       <div className="grid grid-cols-1 gap-4">
         <details open>
-          <summary className="lh-page-subtitle cursor-pointer">R2 public bucket url</summary>
+          <summary className="lh-page-subtitle cursor-pointer">R2 公共储存桶 URL</summary>
           <AdminInput
             type="url"
             customClass="text-xs"
@@ -78,11 +78,11 @@ export default class WebGlobalSettingsApp extends React.Component {
           />
         </details>
         <details open>
-          <summary className="lh-page-subtitle cursor-pointer">Items settings</summary>
+          <summary className="lh-page-subtitle cursor-pointer">项目设置</summary>
           <div className="grid grid-cols-2 gap-4">
             <div className="col-span-1">
               <AdminInput
-                label="Items per page"
+                label="每页项目数"
                 type="number"
                 customLabelClass="m-input-label-small"
                 customClass="text-xs"
@@ -95,9 +95,9 @@ export default class WebGlobalSettingsApp extends React.Component {
                   let newItemsPerPage = parseInt(e.target.value, 10);
                   if (newItemsPerPage > MAX_ITEMS_PER_PAGE) {
                     newItemsPerPage = MAX_ITEMS_PER_PAGE;
-                    showToast(`Items per page should be less than ${MAX_ITEMS_PER_PAGE}`, 'error', 5000)
+                    showToast(`每页项目数 should be less than ${MAX_ITEMS_PER_PAGE}`, 'error', 5000)
                   } else if (newItemsPerPage < 0) {
-                    showToast('Items per page should not be a negative number', 'error', 5000)
+                    showToast('每页项目数 should not be a negative number', 'error', 5000)
                   }
                   this.setState({itemsPerPage: newItemsPerPage}, () => setChanged())
                 }}
@@ -126,7 +126,7 @@ export default class WebGlobalSettingsApp extends React.Component {
           </div>
         </details>
         <details>
-          <summary className="lh-page-subtitle cursor-pointer">Favicon</summary>
+          <summary className="lh-page-subtitle cursor-pointer">网站图标</summary>
           <div className="flex">
             <AdminImageUploaderApp
               feed={feed}

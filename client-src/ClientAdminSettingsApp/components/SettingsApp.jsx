@@ -47,14 +47,14 @@ export default class SettingsApp extends React.Component {
     Requests.axiosPost(ADMIN_URLS.ajaxFeed(), {settings: {[bundleKey]: bundle}})
       .then(() => {
         this.setState({submitStatus: null, submitForType: null, changed: false}, () => {
-          showToast('Updated!', 'success');
+          showToast('已更新！', 'success');
         });
       }).catch((error) => {
       this.setState({submitStatus: null, submitForType: null}, () => {
         if (!error.response) {
-          showToast('Network error. Please refresh the page and try again.', 'error');
+          showToast('网络错误，请刷新页面后重试。', 'error');
         } else {
-          showToast('Failed. Please try again.', 'error');
+          showToast('失败了，请重试。', 'error');
         }
       });
     });

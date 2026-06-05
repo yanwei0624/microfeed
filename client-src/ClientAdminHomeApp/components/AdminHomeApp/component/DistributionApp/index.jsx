@@ -7,33 +7,33 @@ const DISTRIBUTION_BUNDLE = [
   {
     label: 'rss',
     url: PUBLIC_URLS.rssFeed(getPublicBaseUrl()),
-    summary: 'Submit this rss link to podcast apps / websites.',
+    summary: '将此 RSS 链接提交到播客应用 / 网站。',
     details: (<div className="grid grid-cols-1 gap-4 py-2">
       <div>
         The schema of this rss feed is following the <a href="https://help.apple.com/itc/podcasts_connect/#/itcb54353390">Apple Podcasts rss spec</a>.
       </div>
       <div>
-        You can disable the rss feed in <a href={ADMIN_URLS.settings()}>Settings / Subscribe Methods</a>.
+        您可以在中禁用 RSS 订阅 <a href={ADMIN_URLS.settings()}>Settings / Subscribe Methods</a>.
       </div>
     </div>),
   },
   {
     label: 'web',
     url: PUBLIC_URLS.webFeed(getPublicBaseUrl()),
-    summary: 'Share this web link to your audience via social media / email.',
+    summary: '通过社交媒体 / 邮件分享此链接给您的受众。',
     details: (<div className="grid grid-cols-1 gap-4 py-2">
       <div>
-        You can customize the styling and add some custom code in <a href={ADMIN_URLS.settings()}>Settings / Custom code</a>.
+        You can customize the styling and add some custom code in <a href={ADMIN_URLS.settings()}>设置 / 自定义代码</a>.
       </div>
       <div>
-        You can disable the entire website in <a href={ADMIN_URLS.settings()}>Settings / Access control</a>.
+        您可以在中禁用整个网站 <a href={ADMIN_URLS.settings()}>设置 / 访问控制</a>.
       </div>
     </div>),
   },
   {
     label: 'json',
     url: PUBLIC_URLS.jsonFeed(getPublicBaseUrl()),
-    summary: 'Write code to fetch structured data and set up automation.',
+    summary: '编写代码获取结构化数据并设置自动化。',
     details: (<div className="grid grid-cols-1 gap-4 py-2">
       <div>
         The schema of this json feed is following the <a href="https://www.jsonfeed.org/">
@@ -41,13 +41,13 @@ const DISTRIBUTION_BUNDLE = [
         YAML</a> or <a href="/json/openapi.html">HTML</a>.
       </div>
       <div>
-        You can disable the json feed in <a href={ADMIN_URLS.settings()}>Settings / Subscribe methods</a>.
+        您可以在中禁用 JSON 订阅 <a href={ADMIN_URLS.settings()}>Settings / Subscribe methods</a>.
       </div>
     </div>),
   },
 ];
 
-export default class DistributionApp extends React.Component {
+export default class 分发App extends React.Component {
   constructor(props) {
     super(props);
 
@@ -58,7 +58,7 @@ export default class DistributionApp extends React.Component {
   render() {
     return (<div className="lh-page-card">
       <div className="lh-page-title">
-        Distribution
+        分发
       </div>
       <div className="grid grid-cols-1 gap-8 mt-8">
         {DISTRIBUTION_BUNDLE.map((bundle) => (<div

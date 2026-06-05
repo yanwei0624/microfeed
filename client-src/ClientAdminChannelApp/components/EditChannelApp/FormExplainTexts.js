@@ -18,8 +18,8 @@ export const CHANNEL_CONTROLS = {
 
 export const CONTROLS_TEXTS_DICT = {
   [CHANNEL_CONTROLS.TITLE]: {
-    linkName: 'Title',
-    modalTitle: 'Channel / Title',
+    linkName: '标题',
+    modalTitle: '频道 / 标题',
     text: "A channel's name. <br>" +
       "If this channel is a podcast, then it would be a podcast name, e.g., The Joe Rogan Experience, The Daily...<br>" +
       "If this is a blog, then it's the blog site's name, e.g., TechCrunch, Daring Fireball...",
@@ -27,8 +27,8 @@ export const CONTROLS_TEXTS_DICT = {
     json: '{ "title": "Title Here" }',
   },
   [CHANNEL_CONTROLS.IMAGE]: {
-    linkName: 'Channel image',
-    modalTitle: 'Channel / Image',
+    linkName: '频道图片',
+    modalTitle: '频道 / 图片',
     text: "A channel's image.<br>" +
       "If it's a podcast, then the image must be a minimum size of 1400 x 1400 pixels and a maximum size of 3000 x 3000 pixels, " +
       "in JPEG or PNG format, 72 dpi, with appropriate file extensions (.jpg, .png), and in the RGB colorspace - " +
@@ -37,32 +37,32 @@ export const CONTROLS_TEXTS_DICT = {
     json: '{ "icon": "https://cdn-site.com/img.jpg" }',
   },
   [CHANNEL_CONTROLS.PUBLISHER]: {
-    linkName: 'Publisher',
-    modalTitle: 'Channel / Publisher',
+    linkName: '发布者',
+    modalTitle: '频道 / 发布者',
     text: "A channel's author / publisher. <br>" +
       "If this channel is a podcast, then it would be the publisher's name, e.g., Gimlet Media, New York Times, Joe Rogan...",
     rss: '<channel><itunes:author>Publisher Here</itunes:author></channel>',
     json: '{ "authors": [{"name": "Publisher Here"}] }',
   },
   [CHANNEL_CONTROLS.WEBSITE]: {
-    linkName: 'Website',
-    modalTitle: 'Channel / Website',
+    linkName: '网站',
+    modalTitle: '频道 / 网站',
     text: "A channel's website. By default, it's the url of this website. " +
       "But you can set it to fit your use case, e.g., your homepage on your university's website.",
     rss: '<channel><link>Website Here</link></channel>',
     json: '{ "home_page_url": "Website Here" }',
   },
   [CHANNEL_CONTROLS.CATEGORIES]: {
-    linkName: 'Categories',
-    modalTitle: 'Channel / Categories',
+    linkName: '分类',
+    modalTitle: '频道 / 分类',
     text: "A channel's categories. All available categories are from <a href='https://podcasters.apple.com/support/1691-apple-podcasts-categories'>Apple Podcasts</a>.<br>" +
       "If this is a podcast, although you can specify more than one category, Apple Podcasts only recognizes the first category and subcategory.",
     rss: '<channel><itunes:category text="Arts" /></channel>',
     json: '{ "_microfeed": {"categories": [{"name": "Arts"}]} }',
   },
   [CHANNEL_CONTROLS.LANGUAGE]: {
-    linkName: 'Language',
-    modalTitle: 'Channel / Language',
+    linkName: '语言',
+    modalTitle: '频道 / 语言',
     text: "A channel's language.<br>The primary language for the feed in the format specified in RFC 5646. " +
       "The value is usually a 2-letter language tag from ISO 639-1, optionally followed by a region tag. " +
       "(Examples: en or en-US.)",
@@ -70,8 +70,8 @@ export const CONTROLS_TEXTS_DICT = {
     json: '{ "language": "en-us" }',
   },
   [CHANNEL_CONTROLS.DESCRIPTION]: {
-    linkName: 'Description',
-    modalTitle: 'Channel / Description',
+    linkName: '描述',
+    modalTitle: '频道 / 描述',
     text: "A channel's description.<br>" +
       "If this channel is a podcast, the maximum amount of text allowed for the description is 4000 characters - this is a requirement of Apple Podcasts.<br>" +
       "If this is a blog, then you can write as many words as you want for the description.",
@@ -80,7 +80,7 @@ export const CONTROLS_TEXTS_DICT = {
   },
   [CHANNEL_CONTROLS.ITUNES_TYPE]: {
     linkName: '<itunes:type>',
-    modalTitle: 'Channel / <itunes:type>',
+    modalTitle: '频道 / <itunes:type>',
     text: "The type of show.<br>" +
       "If your show is Serial you must use this tag.<br>" +
       "Its values can be one of the following:<br>" +
@@ -92,14 +92,14 @@ export const CONTROLS_TEXTS_DICT = {
   },
   [CHANNEL_CONTROLS.ITUNES_EMAIL]: {
     linkName: '<itunes:email>',
-    modalTitle: 'Channel / <itunes:email>',
+    modalTitle: '频道 / <itunes:email>',
     text: "The podcast owner's contact email. It'll be public in the rss feed. Many podcast platforms require this email to validate your podcast ownership.",
     rss: '<channel><itunes:owner><itunes:email>myname@mycompany.com</itunes:email></itunes:owner></channel>',
     json: '{ "_microfeed": {"itunes:email": "myname@mycompany.com"} }',
   },
   [CHANNEL_CONTROLS.COPYRIGHT]: {
-    linkName: 'Copyright',
-    modalTitle: 'Channel / Copyright',
+    linkName: '版权',
+    modalTitle: '频道 / 版权声明',
     text: "The show copyright details.<br>" +
       "If your show is copyrighted you should use this tag. For example:<br>" +
       "<em>Copyright 1995-2019 John John Appleseed</em>",
@@ -108,7 +108,7 @@ export const CONTROLS_TEXTS_DICT = {
   },
   [CHANNEL_CONTROLS.ITUNES_TITLE]: {
     linkName: '<itunes:title>',
-    modalTitle: 'Channel / <itunes:title>',
+    modalTitle: '频道 / <itunes:title>',
     text: "The show title specific for Apple Podcasts.<br>" +
       "itunes:title is a string containing a clear concise name of your show on Apple Podcasts.",
     rss: '<channel><itunes:title>a title here</itunes:title></channel>',
@@ -116,7 +116,7 @@ export const CONTROLS_TEXTS_DICT = {
   },
   [CHANNEL_CONTROLS.ITUNES_EXPLICIT]: {
     linkName: '<itunes:explicit>',
-    modalTitle: 'Channel / <itunes:explicit>',
+    modalTitle: '频道 / <itunes:explicit>',
     text: "The podcast parental advisory information.<br>" +
       "If you specify yes, indicating the presence of explicit content, Apple Podcasts displays an Explicit parental advisory graphic for your podcast.<br>" +
       "Podcasts containing explicit material aren’t available in some Apple Podcasts territories.<br>" +
@@ -126,7 +126,7 @@ export const CONTROLS_TEXTS_DICT = {
   },
   [CHANNEL_CONTROLS.ITUNES_BLOCK]: {
     linkName: '<itunes:block>',
-    modalTitle: 'Channel / <itunes:block>',
+    modalTitle: '频道 / <itunes:block>',
     text: "The podcast show or hide status in Apple Podcasts.<br>" +
       "If you want your show removed from the Apple directory, select 'yes'.<br>" +
       "Specifying the itunes:block tag with a 'yes' value, prevents the entire podcast from appearing in Apple Podcasts.<br>" +
@@ -136,7 +136,7 @@ export const CONTROLS_TEXTS_DICT = {
   },
   [CHANNEL_CONTROLS.ITUNES_COMPLETE]: {
     linkName: '<itunes:complete>',
-    modalTitle: 'Channel / <itunes:complete>',
+    modalTitle: '频道 / <itunes:complete>',
     text: "The podcast update status.<br>" +
       "If you will never publish another episode to your show, select 'yes'.<br>" +
       "Specifying the itunes:complete tag with a 'yes' value indicates that a podcast is complete and you will not post any more episodes in the future.<br>" +
@@ -146,7 +146,7 @@ export const CONTROLS_TEXTS_DICT = {
   },
   [CHANNEL_CONTROLS.ITUNES_NEW_RSS_URL]: {
     linkName: '<itunes:new-rss-url>',
-    modalTitle: 'Channel / <itunes:new-rss-url>',
+    modalTitle: '频道 / <itunes:new-rss-url>',
     text: "The new podcast RSS Feed URL.<br>" +
       "If you change the URL of your podcast feed, you should use this tag in your new feed.<br>" +
       "Use the itunes:new-feed-url tag to manually change the URL where your podcast is located.<br>" +

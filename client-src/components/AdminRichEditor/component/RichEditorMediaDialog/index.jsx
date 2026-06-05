@@ -12,7 +12,7 @@ import {showToast} from "../../../../common/ToastUtils";
 
 const UPLOAD_STATUS__START = 1;
 
-function FromUrl({url, onChange, onInsert}) {
+function FromUrl({url, onChange, on插入}) {
   let disabled = false;
   if (!url || url.length <= 3) {
     disabled = true;
@@ -27,8 +27,8 @@ function FromUrl({url, onChange, onInsert}) {
       />
     </div>
     <div className="py-4 flex justify-center">
-      <button type="submit" className="lh-btn lh-btn-brand-dark" disabled={disabled} onClick={onInsert}>
-        Insert
+      <button type="submit" className="lh-btn lh-btn-brand-dark" disabled={disabled} onClick={on插入}>
+        插入
       </button>
     </div>
   </form>);
@@ -97,7 +97,7 @@ export default class RichEditorMediaDialog extends React.Component {
       const url = urlJoinWithRelative(publicBucketUrl, cdnUrl);
       this.setState({
         url,
-        progressText: 'Done!',
+        progressText: '完成！',
         uploadStatus: null,
       }, () => {
         this.insertMedia();
@@ -144,7 +144,7 @@ export default class RichEditorMediaDialog extends React.Component {
     const uploading = uploadStatus === UPLOAD_STATUS__START;
     return (
       <AdminDialog
-        title={`Insert ${mediaType}`}
+        title={`插入 ${mediaType}`}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         disabledClose={disabledClose}
@@ -155,12 +155,12 @@ export default class RichEditorMediaDialog extends React.Component {
             customClass="text-sm font-semibold"
             buttons={[
               {
-                'name': 'Upload a new file',
+                'name': '上传新文件',
                 'value': 'upload',
                 'checked': mode === 'upload',
               },
               {
-                'name': 'From URL',
+                'name': '从 URL 导入',
                 'value': 'url',
                 'checked': mode === 'url',
               },
@@ -181,7 +181,7 @@ export default class RichEditorMediaDialog extends React.Component {
             /> : <FromUrl
               url={url}
               onChange={(e) => this.setState({url: e.target.value})}
-              onInsert={(e) => {
+              on插入={(e) => {
                 e.preventDefault();
                 this.insertMedia();
                 setIsOpen(false);

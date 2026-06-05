@@ -18,7 +18,7 @@ function EmptyImage({fileTypes}) {
       <CloudArrowUpIcon className="w-8" />
     </div>
     <div className="font-semibold">
-      Click or drag here to upload image
+      点击或拖拽上传图片
     </div>
     <div className="mt-2">
       {fileTypes.join(',')}
@@ -34,7 +34,7 @@ function PreviewImage({url}) {
     />
     <div className="absolute bottom-4 text-sm font-normal text-brand-light">
       <em>
-        Click or drag here to change image
+        点击或拖拽更换图片
       </em>
     </div>
   </div>);
@@ -150,9 +150,9 @@ export default class AdminImageUploaderApp extends React.Component {
       }, (error) => {
         this.setState({...this.initState}, () => {
           if (!error.response) {
-            showToast('Network error. Please refresh the page and try again.', 'error');
+            showToast('网络错误，请刷新页面后重试。', 'error');
           } else {
-            showToast('Failed. Please try again.', 'error');
+            showToast('失败了，请重试。', 'error');
           }
         });
       });
@@ -168,7 +168,7 @@ export default class AdminImageUploaderApp extends React.Component {
     const imageSizeNotOkay = imageSizeNotOkayFunc ? imageSizeNotOkayFunc(imageWidth, imageHeight) :
       imageWidth < 1400 || imageHeight < 1400;
     const imageSizeNotOkayMsg = imageSizeNotOkayMsgFunc ? imageSizeNotOkayMsgFunc(imageWidth, imageHeight) :
-      `Image too small: ${parseInt(imageWidth)} x ${parseInt(imageHeight)} pixels. ` +
+      `图片太小：${parseInt(imageWidth)} x ${parseInt(imageHeight)} pixels. ` +
       "If it's for a podcast image, Apple Podcasts requires the image to have 1400 x 1400 to 3000 x 3000 pixels.";
     return (<div className="lh-upload-wrapper">
       <FileUploader
@@ -184,7 +184,7 @@ export default class AdminImageUploaderApp extends React.Component {
         </div>
       </FileUploader>
       {absoluteImageUrl && <div className="text-sm flex justify-center mt-1">
-        <ExternalLink linkClass="text-helper-color text-xs" text="preview image" url={absoluteImageUrl} />
+        <ExternalLink linkClass="text-helper-color text-xs" text="预览图片" url={absoluteImageUrl} />
       </div>}
       <AdminDialog
         isOpen={showModal}
@@ -226,12 +226,12 @@ export default class AdminImageUploaderApp extends React.Component {
             onClick={this.onFileUploadToR2}
             disabled={uploading}
           >
-            {uploading ? `Uploading... ${progressText}` : 'Upload'}
+            {uploading ? `上传中... ${progressText}` : '上传'}
           </button>
         </div>
         {imageWidth > 0 && imageHeight > 0 && <div className={clsx("mt-2 text-xs text-center", imageSizeNotOkay ? 'text-red-500' : 'text-green-500')}>
           {imageSizeNotOkay ? <div>{imageSizeNotOkayMsg}</div> :
-            <div>Image ok: {parseInt(imageWidth)} x {parseInt(imageHeight)} pixels.</div>}
+            <div>图片合格：{parseInt(imageWidth)} x {parseInt(imageHeight)} pixels.</div>}
         </div>}
       </AdminDialog>
     </div>);

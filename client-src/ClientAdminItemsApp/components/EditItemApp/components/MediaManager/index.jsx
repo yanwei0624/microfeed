@@ -29,13 +29,13 @@ function PreviewCurrentMediaFile({url, contentType, category, durationSecond, si
         {category === ENCLOSURE_CATEGORIES.AUDIO && <div className="col-span-1">
           <audio controls preload="metadata" ref={setRef} onLoadedMetadata={updateDuration}>
             <source src={url} type={contentType}/>
-            Your browser does not support the audio element.
+            您的浏览器不支持音频元素。
           </audio>
         </div>}
         {category === ENCLOSURE_CATEGORIES.VIDEO && <div className="col-span-1">
           <video width="80%" preload="metadata" controls ref={setRef} onLoadedMetadata={updateDuration}>
             <source src={url} type={contentType} />
-            Your browser does not support the video tag.
+            您的浏览器不支持视频标签。
           </video>
         </div>}
         {category === ENCLOSURE_CATEGORIES.IMAGE && <div className="col-span-1">
@@ -43,16 +43,16 @@ function PreviewCurrentMediaFile({url, contentType, category, durationSecond, si
         </div>}
         <div className="col-span-1 text-sm">
           <div className="mb-1">
-            <span className="text-helper-color">Content type:</span> {contentType}
+            <span className="text-helper-color">内容类型：</span> {contentType}
           </div>
           <div className="mb-1">
-            <span className="text-helper-color">File size:</span> {humanFileSize(sizeByte)}
+            <span className="text-helper-color">文件大小：</span> {humanFileSize(sizeByte)}
           </div>
           {[ENCLOSURE_CATEGORIES.AUDIO, ENCLOSURE_CATEGORIES.VIDEO].includes(category) && <div className="mb-1">
-            <span className="text-helper-color">Duration:</span> {secondsToHHMMSS(durationSecond)}
+            <span className="text-helper-color">时长：</span> {secondsToHHMMSS(durationSecond)}
           </div>}
           <div className="break-all">
-            <span className="text-helper-color">Download url:</span> <a href={url} className="text-xs" target="_blank">{url}</a>
+            <span className="text-helper-color">下载链接：</span> <a href={url} className="text-xs" target="_blank">{url}</a>
           </div>
         </div>
       </div>

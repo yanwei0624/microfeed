@@ -86,7 +86,7 @@ function MethodRow({method, updateMethodByAttr, index, firstIndex, lastIndex, mo
       <div className="mt-2 flex items-center">
         <div className="">
           <AdminSwitch
-            label="Visible"
+            label="可见"
             customLabelClass={clsx('text-xs', enabled ? 'text-black' : 'text-muted-color')}
             enabled={enabled} setEnabled={(checked) => updateMethodByAttr(id, 'enabled', checked)}
           />
@@ -102,7 +102,7 @@ function MethodRow({method, updateMethodByAttr, index, firstIndex, lastIndex, mo
               }}>
               <div className="flex items-center">
                 <div className="mr-1"><TrashIcon className="w-4"/></div>
-                <div>Delete</div>
+                <div>删除</div>
               </div>
             </a></div> : <div className="text-xs text-muted-color">
               <i>Click "Update" to sync up and actually delete it. Or <a
@@ -111,7 +111,7 @@ function MethodRow({method, updateMethodByAttr, index, firstIndex, lastIndex, mo
                 onClick={(e) => {
                   e.preventDefault();
                   updateMethodByAttr(id, 'deleted', false);
-                }}>Undo</a>.</i>
+                }}>撤销</a>.</i>
             </div>}
           </div>}
         </div>
@@ -131,7 +131,7 @@ function AddNewMethod({isOpenNewMethod, setIsOpenNewMethod, addNewMethod}) {
     >
       <div className="flex items-center justify-center">
         <div className="w-4 mr-1"><PlusCircleIcon/></div>
-        <div>Add new subscribe method</div>
+        <div>添加新的订阅方式</div>
       </div>
     </a>
     <div className="mt-1 text-xs text-muted-color text-center">e.g., Apple Podcasts, Spotify, Listen Notes...</div>

@@ -30,20 +30,20 @@ import {isValidMediaFile} from "../../../../common-src/MediaFileUtils";
 const columnHelper = createColumnHelper();
 const columns = [
   columnHelper.accessor('title', {
-    header: 'Title',
+    header: '标题',
     cell: info => info.getValue(),
   }),
   columnHelper.accessor('status', {
-    header: 'Status',
+    header: '状态',
     cell: info => <div className={clsx('text-center font-semibold', info.getValue() === STATUSES.PUBLISHED ? 'text-brand-light' : '')}>
       {ITEM_STATUSES_DICT[info.getValue()].name}</div>,
   }),
   columnHelper.accessor('pubDateMs', {
-    header: 'Published date',
+    header: '发布日期',
     cell: info => <div className="text-center">{msToDatetimeLocalString(info.getValue())}</div>,
   }),
   columnHelper.accessor('mediaFile', {
-    header: 'Media file',
+    header: '媒体文件',
     cell: info => info.getValue(),
   }),
 ];
@@ -69,12 +69,12 @@ function ItemListTable({data, feed}) {
         groupName="sort-order"
         buttons={[
           {
-            name: 'Newest first',
+            name: '最新在前',
             value: ITEMS_SORT_ORDERS.NEWEST_FIRST,
             checked: newestFirst,
           },
           {
-            name: 'Oldest first',
+            name: '最早在前',
             value: ITEMS_SORT_ORDERS.OLDEST_FIRST,
             checked: !newestFirst,
           },
@@ -114,10 +114,10 @@ function ItemListTable({data, feed}) {
     </table>
     <div className="mt-8 flex justify-center">
       {prevUrl && <div className="mx-2">
-        <a href={prevUrl}><span className="lh-icon-arrow-left" /> Prev</a>
+        <a href={prevUrl}><span className="lh-icon-arrow-left" /> 上一页</a>
       </div>}
       {nextUrl && <div className="mx-2">
-        <a href={nextUrl}>Next <span className="lh-icon-arrow-right" /></a>
+        <a href={nextUrl}>下一页 <span className="lh-icon-arrow-right" /></a>
       </div>}
     </div>
   </div>);
@@ -161,13 +161,13 @@ export default class AllItemsApp extends React.Component {
             linkClass="text-xs text-helper-color
             hover:text-brand-light"
             url={PUBLIC_URLS.webItem(item.id, item.title)}
-            text="Public page"
+            text="公共页面"
           />
           <div className="ml-4 flex-none">
             <a
               href={ADMIN_URLS.editItem(item.id)}
             ><span className="block text-xs text-helper-color hover:text-brand-light">
-              Edit this item <span className="lh-icon-arrow-right"/></span></a>
+              编辑此项目 <span className="lh-icon-arrow-right"/></span></a>
           </div>
         </div>
       </div>,
@@ -197,9 +197,9 @@ export default class AllItemsApp extends React.Component {
         <div>
           {data.length > 0 ? <ItemListTable data={data} feed={feed} /> : <div>
             <div className="mb-8">
-              No items yet.
+              还没有项目。
             </div>
-            <a href={ADMIN_URLS.newItem()}>Add a new item now <span className="lh-icon-arrow-right" /></a>
+            <a href={ADMIN_URLS.newItem()}>立即添加新项目 <span className="lh-icon-arrow-right" /></a>
           </div>}
         </div>
       </form>

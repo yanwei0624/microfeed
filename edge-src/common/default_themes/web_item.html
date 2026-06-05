@@ -18,24 +18,24 @@
     <div>
       {{#items.0._microfeed.is_audio}}
       <div class="text-sm mb-4">
-        Listen:
+        收听：
       </div>
       {{#items.0.attachments}}
       <audio controls preload="metadata" class="w-full">
         <source src="{{url}}" type="{{mime_type}}"/>
-        Your browser does not support the audio element.
+        您的浏览器不支持音频元素。
       </audio>
       {{/items.0.attachments}}
       {{/items.0._microfeed.is_audio}}
 
       {{#items.0._microfeed.is_video}}
       <div class="text-sm mb-4">
-        Watch:
+        观看：
       </div>
       {{#items.0.attachments}}
       <video controls preload="metadata" class="w-full">
         <source src="{{url}}" type="{{mime_type}}"/>
-        Your browser does not support the video element.
+        您的浏览器不支持视频元素。
       </video>
       {{/items.0.attachments}}
       {{/items.0._microfeed.is_video}}
@@ -63,7 +63,7 @@
     <div>
       {{#_microfeed.subscribe_methods.length}}
       <div class="text-sm mt-4 mb-2">
-        Subscribe:
+        订阅：
       </div>
       {{/_microfeed.subscribe_methods.length}}
       <div class="flex flex-wrap">
@@ -80,7 +80,7 @@
   </section>
 
   <section>
-    <h2 class="border-b">About</h2>
+    <h2 class="border-b">关于</h2>
     <div>
       {{#items.0.image}}
       <div class="mb-4">

@@ -23,24 +23,24 @@ export default class CustomCodeSettingsApp extends React.Component {
     const {submitting, submitForType} = this.props;
     const {currentType} = this.state;
     return (<SettingsBase
-      title="Custom code"
+      title="自定义代码"
       submitting={submitting}
       submitForType={submitForType}
       currentType={currentType}
     >
       <NavBlock
         url={ADMIN_URLS.codeEditorSettings()}
-        text="Edit shared html code across web pages"
+        text="编辑跨网页的共享 HTML 代码"
       />
       <div className="text-xs text-muted-color mt-2">
         {'Code inside <head></head> and at top & bottom of <body></body>'}
       </div>
 
       <div className="mt-8">
-        <div className="lh-page-subtitle">Themes</div>
+        <div className="lh-page-subtitle">主题</div>
         <NavBlock
           url={`${ADMIN_URLS.codeEditorSettings()}?type=${CODE_TYPES.THEMES}&theme=custom`}
-          text="Edit web and rss styling"
+          text="编辑网页和 RSS 样式"
         />
         <div className="text-xs text-muted-color mt-2">
           <em>microfeed will support multiple themes / templates in the future</em>

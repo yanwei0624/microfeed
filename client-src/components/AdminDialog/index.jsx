@@ -1,11 +1,11 @@
 import React from "react";
 import {Dialog} from '@headlessui/react'
 
-export default function AdminDialog({title, isOpen, setIsOpen, children, disabledClose=false}) {
+export default function AdminDialog({title, isOpen, setIsOpen, children, disabled关闭=false}) {
   return (<Dialog
     className="relative z-50"
     open={isOpen}
-    onClose={() => {/*Empty function disables ESC to dismiss & click outside to dismiss*/}}
+    on关闭={() => {/*Empty function disables ESC to dismiss & click outside to dismiss*/}}
   >
     <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
     <div className="fixed inset-0 flex items-center justify-center p-4">
@@ -15,10 +15,10 @@ export default function AdminDialog({title, isOpen, setIsOpen, children, disable
           <div className="flex-none">
             <button
               onClick={() => setIsOpen(false)}
-              disabled={disabledClose}
+              disabled={disabled关闭}
               className="text-sm hover:opacity-50"
             >
-              <span className="lh-icon-x-mark text-lg"/> Close
+              <span className="lh-icon-x-mark text-lg"/> 关闭
             </button>
           </div>
         </div>

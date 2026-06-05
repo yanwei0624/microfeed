@@ -9,25 +9,25 @@
   </a>
 </div>
 
-<h1 align="center">microfeed: a lightweight cms self-hosted on cloudflare</h1>
+<h1 align="center">microfeed: 在 Cloudflare 上自托管的轻量级 CMS</h1>
 
   <p align="center">
-    <a href="https://github.com/microfeed/microfeed/issues/new?assignees=&labels=bug"><b>Report Bug</b></a>
+    <a href="https://github.com/microfeed/microfeed/issues/new?assignees=&labels=bug"><b>报告 Bug</b></a>
     ·
-    <a href="https://github.com/microfeed/microfeed/discussions/new?category=ideas"><b>Request Feature</b></a>
+    <a href="https://github.com/microfeed/microfeed/discussions/new?category=ideas"><b>提交功能请求</b></a>
     ·
-    <a href="mailto:support@microfeed.org"><b>Email Us Privately</b></a>
+    <a href="mailto:support@microfeed.org"><b>私下发邮件给我们</b></a>
   </p>
 
-Welcome to microfeed, a lightweight content management system (CMS) self-hosted on Cloudflare.
-With microfeed, you can easily publish a variety of content such as audios, videos, photos, documents, blog posts,
-and external URLs to a feed in the form of web, RSS, and JSON. It's the perfect solution for tech-savvy individuals who
-want to self-host their own CMS without having to run their own servers.
+欢迎使用 microfeed，一个在 Cloudflare 上自托管的轻量级内容管理系统（CMS）。
+借助 microfeed，您可以轻松发布各种内容，如音频、视频、照片、文档、博客文章
+以及外部链接，以网页、RSS 和 JSON 订阅的形式呈现。
+它是希望自托管 CMS 但又不想运行自己的服务器的技术用户的完美解决方案。
 
 microfeed is built by [Listen Notes](https://www.listennotes.com/) and is hosted on Cloudflare's [Pages](https://pages.cloudflare.com/),
 [R2](https://www.cloudflare.com/products/r2/), [D1](https://developers.cloudflare.com/d1/), and [Zero Trust](https://www.cloudflare.com/products/zero-trust/).
 
-If you have any questions or feedback, please don't hesitate to reach out to us at support@microfeed.org. We'd love to hear from you!
+如果您有任何问题或反馈，请随时通过 support@microfeed.org 联系我们。我们期待您的来信！
 
 ## 📚 Table of contents
 [![Deploy to Cloudflare Pages](https://github.com/microfeed/microfeed/actions/workflows/deploy.yml/badge.svg)](https://github.com/microfeed/microfeed/actions/workflows/deploy.yml)
@@ -49,18 +49,18 @@ If you have any questions or feedback, please don't hesitate to reach out to us 
   * [Run microfeed on local](#run-microfeed-on-local)
 * [🛡️ License](#%EF%B8%8F-license)
 
-## ⭐️ How it works
+## ⭐️ 工作原理
 
-Since the 1990s, a significant portion of the web has been powered by feeds.
-People (and bots) publish items to a feed, and others can subscribe to that feed to receive new content.
+自 1990 年代以来，Web 的很大一部分一直由订阅源驱动。
+人们（和机器人）将项目发布到订阅源，其他人可以订阅该订阅源以接收新内容。
 
-microfeed makes it easy for individuals to self-host their own feed on Cloudflare, including but not limited to
-* a podcast feed of audios
-* a blog feed of posts
+microfeed 让个人可以轻松地在 Cloudflare 上自托管自己的订阅源，包括但不限于：
+* 音频播客订阅源
+* 博客文章订阅源
 * an Instagram-like feed of images (e.g., [llamacorn.listennotes.com](https://llamacorn.listennotes.com/), [brand-assets.listennotes.com](https://brand-assets.listennotes.com/))
-* a YouTube-like feed of videos
+* 类似 YouTube 的视频订阅源
 * a personal website with custom links (e.g., [wenbin.org](https://www.wenbin.org/))
-* a content curation feed of external news article urls
+* 外部新闻文章链接的内容策划订阅源
 * a marketing site with updates and press coverage (e.g., [microfeed.org](https://www.microfeed.org/))
 * a headless cms with a GUI dashboard and a public json feed (e.g., [microfeed.org/json](https://www.microfeed.org/json/) with OpenAPI spec in [YAML](https://www.microfeed.org/json/openapi.yaml) and [HTML](https://www.microfeed.org/json/openapi.html))
 * a list of domain names for sale (e.g., [ListenHost.com](https://www.listenhost.com/)...)
@@ -68,22 +68,22 @@ microfeed makes it easy for individuals to self-host their own feed on Cloudflar
 * a changelog website (e.g., [changelog.listennotes.com](https://changelog.listennotes.com/))
 * ...
 
-microfeed uses Cloudflare [Pages](https://pages.cloudflare.com/) to host and run the code,
-[R2](https://www.cloudflare.com/products/r2/) to host and serve media files,
-[D1](https://developers.cloudflare.com/d1/) to store metadata,
-and [Zero Trust](https://www.cloudflare.com/products/zero-trust/) to provide logins to the admin dashboard.
-Cloudflare provides very generous free usage quotas, making it an affordable solution for personal or small business use.
-While you will still need to pay for a domain name, hosting microfeed on Cloudflare is essentially free.
+microfeed 使用 Cloudflare [Pages](https://pages.cloudflare.com/) 托管和运行代码，
+[R2](https://www.cloudflare.com/products/r2/) 托管和提供媒体文件，
+[D1](https://developers.cloudflare.com/d1/) 存储元数据，
+以及 [Zero Trust](https://www.cloudflare.com/products/zero-trust/) 提供管理面板的登录功能。
+Cloudflare 提供非常慷慨的免费使用配额，使其成为个人或小型企业使用的经济实惠的解决方案。
+虽然您仍需要为域名付费，但在 Cloudflare 上托管 microfeed 基本上是免费的。
 
-With microfeed, you can publish a variety of content such as audios, videos, photos, documents, blog posts,
-and external URLs to a customizable website, an RSS feed, and a [JSON feed](https://www.jsonfeed.org/).
-Check out some examples of microfeed in action:
-* Web feed: [https://llamacorn.listennotes.com/](https://llamacorn.listennotes.com/)
-* Rss feed: [https://llamacorn.listennotes.com/rss/](https://llamacorn.listennotes.com/rss/)
-* Json feed: [https://llamacorn.listennotes.com/json/](https://llamacorn.listennotes.com/json/)
+借助 microfeed，您可以将各种内容（如音频、视频、照片、文档、博客文章
+和外部链接）发布到可定制的网站、RSS 订阅源和 [JSON 订阅源](https://www.jsonfeed.org/)。
+查看一些 microfeed 的实际示例：
+* 网页订阅源：
+* RSS 订阅源：
+* JSON 订阅源：
 
-microfeed provides a simple yet powerful admin dashboard that makes it easy to add items to the feed,
-upload media files, and customize web page styles. If you've used WordPress before, you'll find it familiar.
+microfeed 提供了一个简单而强大的管理面板，可以轻松地向订阅源添加项目、
+上传媒体文件和自定义网页样式。如果您曾经使用过 WordPress，您会发现它很熟悉。
 
 ![image-6d056193c81c0b8f5de0503f5af18116](https://user-images.githubusercontent.com/1719237/209486588-00acefe0-dd51-4bfc-aed7-1f63850aa720.png)
 

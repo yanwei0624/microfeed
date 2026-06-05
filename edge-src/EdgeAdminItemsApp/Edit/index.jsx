@@ -7,7 +7,7 @@ export default class AdminItemsEditApp extends React.Component {
     const {feedContent, itemId, onboardingResult} = this.props;
     return (
       <AdminWholeHtml
-        title={`Edit item (id = ${itemId}) | ${OUR_BRAND.domain}`}
+        title={`编辑项目 (id = ${itemId}) | ${OUR_BRAND.domain}`}
         description=""
         webpackJsList={['edit_item_js']}
         webpackCssList={['admin_styles_css']}

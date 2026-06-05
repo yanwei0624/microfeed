@@ -18,7 +18,7 @@
         <div>
           {{#_microfeed.subscribe_methods.length}}
           <div class="text-sm mt-4 mb-2">
-            Subscribe:
+            订阅：
           </div>
           {{/_microfeed.subscribe_methods.length}}
           <div class="flex flex-wrap">
@@ -38,19 +38,19 @@
 
   {{#description}}
   <section>
-    <h2 class="border-b">About</h2>
+    <h2 class="border-b">关于</h2>
     <div>{{{description}}}</div>
   </section>
   {{/description}}
 
   <section>
     <h2 class="border-b">
-      Latest
+      最新内容
     </h2>
 
     <div>
       {{^items.length}}
-      No items.
+      暂无内容。
       {{/items.length}}
 
       {{#items}}
@@ -75,13 +75,13 @@
       {{#_microfeed.items_prev_cursor}}
       <div class="px-2">
         <a href="?prev_cursor={{_microfeed.items_prev_cursor}}&sort={{_microfeed.items_sort_order}}"><span
-          class="icon-arrow-left"> Prev</span></a>
+          class="icon-arrow-left"> 上一页</span></a>
       </div>
       {{/_microfeed.items_prev_cursor}}
 
       {{#_microfeed.items_next_cursor}}
       <div class="px-2">
-        <a href="?next_cursor={{_microfeed.items_next_cursor}}&sort={{_microfeed.items_sort_order}}">Next <span
+        <a href="?next_cursor={{_microfeed.items_next_cursor}}&sort={{_microfeed.items_sort_order}}">下一页 <span
           class="icon-arrow-right"></span></a>
       </div>
       {{/_microfeed.items_next_cursor}}

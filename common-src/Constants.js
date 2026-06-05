@@ -143,23 +143,23 @@ export const ENCLOSURE_CATEGORIES = {
 };
 export const ENCLOSURE_CATEGORIES_DICT = {
   [ENCLOSURE_CATEGORIES.AUDIO]: {
-    name: 'audio',
+    name: '音频',
     fileTypes: ['mp3', 'm4b', 'flac'],
   },
   [ENCLOSURE_CATEGORIES.VIDEO]: {
-    name: 'video',
+    name: '视频',
     fileTypes: ['mp4'],
   },
   [ENCLOSURE_CATEGORIES.DOCUMENT]: {
-    name: 'document',
+    name: '文档',
     fileTypes: ['pdf', 'docx', 'doc', 'xlsx', 'ppt', 'pptx', 'txt'],
   },
   [ENCLOSURE_CATEGORIES.IMAGE]: {
-    name: 'image',
+    name: '图片',
     fileTypes: ['png', 'jpg', 'jpeg', 'gif', 'heic', 'cr2'],
   },
   [ENCLOSURE_CATEGORIES.EXTERNAL_URL]: {
-    name: 'external url',
+    name: '外部链接',
     fileTypes: [],
   },
 };
@@ -182,19 +182,19 @@ export const NAV_ITEMS = {
 
 export const NAV_ITEMS_DICT = {
   [NAV_ITEMS.ADMIN_HOME]: {
-    name: 'Home',
+    name: '首页',
   },
   [NAV_ITEMS.EDIT_CHANNEL]: {
-    name: 'Edit channel',
+    name: '编辑频道',
   },
   [NAV_ITEMS.NEW_ITEM]: {
-    name: 'Add new item',
+    name: '添加新项目',
   },
   [NAV_ITEMS.ALL_ITEMS]: {
-    name: 'See all items',
+    name: '所有项目',
   },
   [NAV_ITEMS.SETTINGS]: {
-    name: 'Settings',
+    name: '设置',
   },
 };
 
@@ -206,16 +206,16 @@ export const CHANNEL_STATUSES = {
 
 export const CHANNEL_STATUSES_DICT = {
   [CHANNEL_STATUSES.PUBLIC]: {
-    name: 'Public',
-    description: 'Make the entire site publicly accessible, including all non-Admin web pages, rss feed and json feed.',
+    name: '公开',
+    description: '让整个站点公开可访问，包括所有非管理页面、RSS 订阅和 JSON 订阅。',
   },
   [CHANNEL_STATUSES.OFFLINE]: {
-    name: 'Offline',
-    description: 'Make the entire site offline. All non-Admin web pages, rss feed and json feed will be 404-ed.',
+    name: '离线',
+    description: '让整个站点离线。所有非管理页面、RSS 订阅和 JSON 订阅将返回 404。',
   },
   [CHANNEL_STATUSES.PASSCODE]: {
-    name: 'Passcode',
-    description: 'Protect all pages with a passcode.',
+    name: '密码保护',
+    description: '使用密码保护所有页面。',
   },
 };
 
@@ -233,17 +233,17 @@ export const ITEM_STATUSES_STRINGS_DICT = {
 
 export const ITEM_STATUSES_DICT = {
   [STATUSES.PUBLISHED]: {
-    name: 'published',
-    description: '<b>listed</b> on the web/rss/json feed, and <b>visible</b> via the direct web link.',
+    name: '已发布',
+    description: '在网页/RSS/JSON 订阅中<b>列出</b>，并可通过直接链接<b>访问</b>。',
   },
   [STATUSES.UNPUBLISHED]: {
-    name: 'unpublished',
-    description: '<b>not listed</b> on the web/rss/json feed, and <b>not visible</b> via the direct web link. ' +
-      'An admin can still find it and edit on the <a href="/admin/items/list/">See all items</a> page.</li>'
+    name: '未发布',
+    description: '在网页/RSS/JSON 订阅中<b>不列出</b>，且通过直接链接<b>不可访问</b>。' +
+      '管理员仍可在 <a href="/admin/items/list/">所有项目</a> 页面中找到并编辑。'
   },
   [STATUSES.UNLISTED]: {
-    name: 'unlisted',
-    description: '<b>not listed</b> on the web/rss/json feed, but <b>visible</b> via the direct web link.'
+    name: '未列出',
+    description: '在网页/RSS/JSON 订阅中<b>不列出</b>，但通过直接链接<b>可访问</b>。'
   },
 };
 

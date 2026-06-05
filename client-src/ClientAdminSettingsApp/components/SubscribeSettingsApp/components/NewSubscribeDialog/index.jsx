@@ -9,8 +9,8 @@ const METHODS_OPTIONS = Object.keys(PREDEFINED_SUBSCRIBE_METHODS).map((key) => {
   const m = PREDEFINED_SUBSCRIBE_METHODS[key];
   return {
     value: key,
-    label: <div className="flex items-center">
-      <div className="flex-none mr-2"><img src={m.image} className="w-4"/></div>
+    label: <div class名称="flex items-center">
+      <div class名称="flex-none mr-2"><img src={m.image} class名称="w-4"/></div>
       <div>{m.name}</div>
     </div>,
   };
@@ -41,7 +41,7 @@ export default class NewSubscribeDialog extends React.Component {
     const {selectedMethod, name, url} = this.state;
     const method = PREDEFINED_SUBSCRIBE_METHODS[selectedMethod];
     return (<AdminDialog
-      title="Add new subscribe method"
+      title="添加 new subscribe method"
       isOpen={isOpen}
       setIsOpen={setIsOpen}
     >
@@ -56,13 +56,13 @@ export default class NewSubscribeDialog extends React.Component {
             }}
           />
         </div>
-        {method && <div className="flex mt-4">
-          <div className="mr-4 flex items-center">
-            <img alt={method.name} src={method.image} className="w-24"/>
+        {method && <div class名称="flex mt-4">
+          <div class名称="mr-4 flex items-center">
+            <img alt={method.name} src={method.image} class名称="w-24"/>
           </div>
-          <div className="w-full grid grid-cols-1 gap-4">
+          <div class名称="w-full grid grid-cols-1 gap-4">
             <AdminInput
-              label="Name"
+              label="名称"
               value={name}
               customLabelClass="m-input-label-small"
               customClass="text-xs"
@@ -78,9 +78,9 @@ export default class NewSubscribeDialog extends React.Component {
             />
           </div>
         </div>}
-        <div className="pt-8 flex justify-center">
+        <div class名称="pt-8 flex justify-center">
           <button
-            className="lh-btn lh-btn-brand-dark"
+            class名称="lh-btn lh-btn-brand-dark"
             disabled={!method}
             onClick={(e) => {
               e.preventDefault();
@@ -94,7 +94,7 @@ export default class NewSubscribeDialog extends React.Component {
               this.setState({...this.initState});
             }}
           >
-            Add new subscribe method
+            添加 new subscribe method
           </button>
         </div>
       </form>

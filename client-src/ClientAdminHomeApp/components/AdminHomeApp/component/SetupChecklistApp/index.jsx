@@ -30,7 +30,7 @@ function SetupPublicBucketUrl({onboardState, webGlobalSettings, cloudflareUrls})
   const [url, setUrl] = useState(publicBucketUrl);
   const [submitStatus, setSubmitStatus] = useState(null);
   const submitting = submitStatus === SUBMIT_STATUS__START;
-  return (<CheckListItem onboardState={onboardState} title="Setup R2 public bucket url">
+  return (<CheckListItem onboardState={onboardState} title="设置 R2 公共储存桶 URL">
     <div className="flex">
       <div className="mr-4 flex-1">
         <AdminInput
@@ -83,7 +83,7 @@ function SetupPublicBucketUrl({onboardState, webGlobalSettings, cloudflareUrls})
     <div className="mt-4 rounded-sm bg-gray-100 p-2 text-sm grid grid-cols-1 gap-2">
       <details>
         <summary className="cursor-pointer font-semibold hover:opacity-50">
-          Where to find your R2 public bucket url?
+          如何找到 R2 公共储存桶 URL？
         </summary>
         <div className="my-8 text-helper-color">
           <div>
@@ -110,24 +110,24 @@ function SetupPublicBucketUrl({onboardState, webGlobalSettings, cloudflareUrls})
       </details>
       <details>
         <summary className="cursor-pointer font-semibold hover:opacity-50">
-          What is R2 public bucket url used for?
+          R2 公共储存桶 URL 有什么用？
         </summary>
         <div className="my-8 text-helper-color">
           <div>
-            You will store media files (e.g., audio, video, image, document...) on Cloudflare R2. In order to serve those media files to the public, you have to provide a R2 public bucket url.
+            您将在 Cloudflare R2 上存储媒体文件（如音频、视频、图片、文档...）。为了向公众提供这些文件，您需要提供一个 R2 公共储存桶 URL。
           </div>
           <div className="mt-2">
-            Assuming the R2 public bucket url is https://cdn.example.com, a media file (e.g., audio) will be accessed via a link like https://cdn.example.com/some-audio.mp3
+            假设 R2 公共储存桶 URL 为 https://cdn.example.com，则媒体文件（如音频）可通过 https://cdn.example.com/some-audio.mp3 访问
           </div>
         </div>
       </details>
       <details>
         <summary className="cursor-pointer font-semibold hover:opacity-50">
-          How to make sure this url is valid?
+          如何确保该 URL 有效？
         </summary>
         <div className="my-8 text-helper-color">
           <div>
-            When you open this R2 public bucket url, you will see a 404 page like this (e.g., <a href={OUR_BRAND.exampleCdnUrl} target="_blank">https://media-cdn.microfeed.org</a>):
+            当您打开这个 R2 公共储存桶 URL 时，您会看到类似这样的 404 页面 (e.g., <a href={OUR_BRAND.exampleCdnUrl} target="_blank">https://media-cdn.microfeed.org</a>):
           </div>
           <div className="mt-2">
             <img src="/assets/howto/get-r2-public-bucket-url-howto3.png" className="w-full" />
@@ -139,7 +139,7 @@ function SetupPublicBucketUrl({onboardState, webGlobalSettings, cloudflareUrls})
 }
 
 function ProtectedAdminDashboard({onboardState, cloudflareUrls}) {
-  return (<CheckListItem onboardState={onboardState} title="Add Login to Admin Dashboard">
+  return (<CheckListItem onboardState={onboardState} title="为管理面板添加登录">
     <div className="mt-4 rounded-sm bg-gray-100 p-2 text-sm grid grid-cols-1 gap-2 text-helper-color">
       <div className="mb-2">
         You will use <a href="https://developers.cloudflare.com/cloudflare-one/applications/configure-apps/self-hosted-apps/" target="_blank">
@@ -147,16 +147,16 @@ function ProtectedAdminDashboard({onboardState, cloudflareUrls}) {
       </div>
       <details>
         <summary className="cursor-pointer hover:opacity-50 text-black font-semibold">
-          Step 1: Add an access group
+          步骤 1：添加访问组
         </summary>
         <div className="mt-4">
           Go to <a href={cloudflareUrls.addAccessGroupUrl} target="_blank">Cloudflare Dashboard / Add an access group <span className="lh-icon-arrow-right"/></a>
         </div>
         <div className="my-4">
-          If this is the first time you use Cloudflare Zero Trust, you may need to sign up a Free plan first.
+          如果这是您第一次使用 Cloudflare Zero Trust，您可能需要先注册免费计划。
         </div>
         <div className="mt-4">
-          You need to specify what emails are allowed to access this admin dashboard:
+          您需要指定哪些邮箱被允许访问此管理面板：
         </div>
         <div className="mt-2">
           <img src="/assets/howto/add-access-group.png" className="w-full border"/>
@@ -164,7 +164,7 @@ function ProtectedAdminDashboard({onboardState, cloudflareUrls}) {
       </details>
       <details>
         <summary className="cursor-pointer hover:opacity-50 text-black font-semibold">
-          Step 2: Create a self-hosted app to protect <b>{cloudflareUrls.pagesDevUrl}/admin</b>
+          步骤 2：创建自托管应用以保护 <b>{cloudflareUrls.pagesDevUrl}/admin</b>
         </summary>
         <div className="mt-4">
           Go to <a href={cloudflareUrls.addAppUrl} target="_blank">
@@ -197,10 +197,10 @@ function ProtectedAdminDashboard({onboardState, cloudflareUrls}) {
       </details>
       <details>
         <summary className="cursor-pointer hover:opacity-50 text-black font-semibold">
-          Step 3: Check if it works
+          步骤 3：检查是否生效
         </summary>
         <div className="mt-4">
-          Refresh current page and you should be able to login with your email.
+          刷新当前页面，您将能够用您的邮箱登录。
         </div>
         <div className="my-4">
           <img src="/assets/howto/app-access-login.png" className="w-full border"/>
@@ -208,7 +208,7 @@ function ProtectedAdminDashboard({onboardState, cloudflareUrls}) {
       </details>
       <details>
         <summary className="cursor-pointer hover:opacity-50 text-black font-semibold">
-          Bonus: Create a self-hosted app for <b>*.{cloudflareUrls.pagesDevUrl}</b>
+          额外：为创建自托管应用 <b>*.{cloudflareUrls.pagesDevUrl}</b>
         </summary>
         <div className="mt-4">
         You may want to create a 2nd self-hosted app for <b>*.{cloudflareUrls.pagesDevUrl}</b>, which will
@@ -232,7 +232,7 @@ function ProtectedAdminDashboard({onboardState, cloudflareUrls}) {
 }
 
 function CustomDomain({onboardState, cloudflareUrls}) {
-  return (<CheckListItem onboardState={onboardState} title="Use Custom Domain">
+  return (<CheckListItem onboardState={onboardState} title="使用自定义域名">
     <div className="mt-4 rounded-sm bg-gray-100 p-2 text-sm grid grid-cols-1 gap-2 text-helper-color">
       <div className="mb-2">
         Using custom domain, you can benefit from Cloudflare features such as bot management, Access, and Cache.
@@ -251,7 +251,7 @@ function CustomDomain({onboardState, cloudflareUrls}) {
       </details>
       <details>
         <summary className="cursor-pointer hover:opacity-50 text-black font-semibold">
-          Step 2: Create a self-hosted app to protect admin dashboard
+          步骤 2：创建自托管应用以保护 admin dashboard
         </summary>
         <div className="mt-4">
           If you want to access this admin dashboard from your newly added custom domain, you have to create a
@@ -286,12 +286,12 @@ export default class SetupChecklistApp extends React.Component {
 
     return (<div className="lh-page-card">
       <div className="lh-page-title">
-        Setup checklist
+        初始化检查清单
       </div>
       {onboardingResult.allOk && <div className="text-helper-color border border-green-700 bg-green-100 text-green-700 rounded-sm p-2">
-        <i>You are all set!</i>
+        <i>已经完成配置！</i>
         <div className="mt-2">
-          Start publishing at <a href={ADMIN_URLS.newItem()}>Add new item <span className="lh-icon-arrow-right" /></a>
+          开始发布： <a href={ADMIN_URLS.newItem()}>添加新项目 <span className="lh-icon-arrow-right" /></a>
         </div>
       </div>}
       <div className="mt-8">
@@ -310,7 +310,7 @@ export default class SetupChecklistApp extends React.Component {
         />
       </div>
       <div className="text-right mt-4 text-sm text-helper-color">
-        <span className="text-red-500">*</span> required
+        <span className="text-red-500">*</span> 必填
       </div>
     </div>);
   }

@@ -36,7 +36,7 @@ export default class WhatsNewApp extends React.Component {
       </div>
       <div>
         {fetching ? <div className="text-muted-color text-sm">
-          Loading...
+          加载中...
         </div> : <div className="grid grid-cols-1 gap-4">
           {items.map((item) => (<div key={`item-${item.id}`}>
             <div>
@@ -47,9 +47,9 @@ export default class WhatsNewApp extends React.Component {
             </div>
           </div>))}
           {items.length > 0 ? <div className="text-right">
-            <a href={OUR_BRAND.whatsnewWebsite} target="_blank">Read more <span className="lh-icon-arrow-right" /></a>
+            <a href={OUR_BRAND.whatsnewWebsite} target="_blank">阅读更多 <span className="lh-icon-arrow-right" /></a>
           </div> : <div className="-text-xs text-muted-color mt-1">
-            No news.
+            暂无新闻。
           </div>}
         </div>}
       </div>

@@ -27,7 +27,7 @@ export default class TrackingSettingsApp extends React.Component {
     const urls = trackingUrls.trim() !== '' ? trackingUrls.trim().split(/\n/) : [];
     const exampleAudio = 'https://example.com/audio.mp3';
     return (<SettingsBase
-      title="Tracking urls"
+      title="追踪链接"
       submitting={submitting}
       submitForType={submitForType}
       currentType={currentType}

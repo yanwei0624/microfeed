@@ -7,7 +7,7 @@
       <head>
         <title>
           <xsl:value-of select="/rss/channel/title"/>
-          - RSS Feed
+           - RSS 订阅
         </title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <style type="text/css">
@@ -173,7 +173,7 @@
                 </h1>
                 <xsl:if test="/rss/channel/itunes:author">
                   <p>
-                    By
+                    作者：
                     <span class="podcast-author">
                     <xsl:value-of select="/rss/channel/itunes:author"/>
                   </span>
@@ -181,7 +181,7 @@
                 </xsl:if>
                 <xsl:if test="/rss/channel/itunes:category">
                   <div class="category-container">
-                    Categories:
+                    分类：
                     <xsl:for-each select="/rss/channel/itunes:category">
                       <span class="category-item"><xsl:value-of select="@text"/></span>
                       <xsl:if test="itunes:category/@text">
@@ -251,7 +251,7 @@
                     <xsl:attribute name="href">
                       <xsl:value-of select="enclosure/@url"/>
                     </xsl:attribute>
-                    View
+                    查看
                     <span class="icon-arrow-right"></span>
                   </a>
                 </xsl:when>
@@ -260,7 +260,7 @@
                     <xsl:attribute name="href">
                       <xsl:value-of select="enclosure/@url"/>
                     </xsl:attribute>
-                    Download
+                    下载
                     <span class="icon-arrow-right"></span>
                   </a>
                 </xsl:otherwise>
@@ -276,7 +276,7 @@
                   <xsl:attribute name="href">
                     <xsl:value-of select="@href"/>
                   </xsl:attribute>
-                  <span class="icon-arrow-left"></span> Prev
+                  <span class="icon-arrow-left"></span> 上一页
                 </a>
               </div>
               </xsl:if>
@@ -288,7 +288,7 @@
                   <xsl:attribute name="href">
                     <xsl:value-of select="@href"/>
                   </xsl:attribute>
-                  Next <span class="icon-arrow-right"></span>
+                  下一页 <span class="icon-arrow-right"></span>
                 </a>
               </div>
               </xsl:if>

@@ -62,7 +62,7 @@ export default class AccessSettingsApp extends React.Component {
     const {currentType, access} = this.state;
     const {submitting, submitForType} = this.props;
     return (<SettingsBase
-      title="Access control"
+      title="访问控制"
       submitting={submitting}
       submitForType={submitForType}
       currentType={currentType}

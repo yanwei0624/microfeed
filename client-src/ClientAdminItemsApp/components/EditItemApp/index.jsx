@@ -131,7 +131,7 @@ export default class EditItemApp extends React.Component {
     this.setState({submitStatus: SUBMIT_STATUS__START});
     Requests.axiosPost(ADMIN_URLS.ajaxFeed(), {item: {...item, status: STATUSES.DELETED}})
       .then(() => {
-        showToast('Deleted!', 'success');
+        showToast('已删除！', 'success');
         this.setState({submitStatus: null, changed: false}, () => {
           setTimeout(() => {
             location.href = ADMIN_URLS.allItems();
@@ -141,9 +141,9 @@ export default class EditItemApp extends React.Component {
       .catch((error) => {
         this.setState({submitStatus: null}, () => {
           if (!error.response) {
-            showToast('Network error. Please refresh the page and try again.', 'error');
+            showToast('网络错误，请刷新页面后重试。', 'error');
           } else {
-            showToast('Failed. Please try again.', 'error');
+            showToast('失败了，请重试。', 'error');
           }
         });
       });
@@ -157,9 +157,9 @@ export default class EditItemApp extends React.Component {
       .then(() => {
         this.setState({submitStatus: null, changed: false}, () => {
           if (action === 'edit') {
-            showToast('Updated!', 'success');
+            showToast('已更新！', 'success');
           } else {
-            showToast('Created!', 'success');
+            showToast('已创建！', 'success');
             if (itemId) {
               setTimeout(() => {
                 location.href = ADMIN_URLS.editItem(itemId);
@@ -170,9 +170,9 @@ export default class EditItemApp extends React.Component {
       }).catch((error) => {
       this.setState({submitStatus: null}, () => {
         if (!error.response) {
-          showToast('Network error. Please refresh the page and try again.', 'error');
+          showToast('网络错误，请刷新页面后重试。', 'error');
         } else {
-          showToast('Failed. Please try again.', 'error');
+          showToast('失败了，请重试。', 'error');
         }
       });
     });
@@ -187,13 +187,13 @@ export default class EditItemApp extends React.Component {
     const webGlobalSettings = feed.settings.webGlobalSettings || {};
     const publicBucketUrl = webGlobalSettings.publicBucketUrl || '';
 
-    let buttonText = 'Create';
-    let submittingButtonText = 'Creating...';
+    let buttonText = '创建';
+    let submittingButtonText = '创建中...';
     let currentPage = NAV_ITEMS.NEW_ITEM;
     let upperLevel;
     if (action === 'edit') {
-      buttonText = 'Update';
-      submittingButtonText = 'Updating...';
+      buttonText = '更新';
+      submittingButtonText = '更新中...';
       currentPage = NAV_ITEMS.ALL_ITEMS;
       upperLevel = {
         name: NAV_ITEMS_DICT[NAV_ITEMS.ALL_ITEMS].name,
@@ -302,7 +302,7 @@ export default class EditItemApp extends React.Component {
           </div>
           <div className="lh-page-card">
             <details>
-              <summary className="m-page-summary">Podcast-specific fields</summary>
+              <summary className="m-page-summary">播客特定字段</summary>
               <div className="grid grid-cols-1 gap-8">
                 <div className="grid grid-cols-3 gap-4 mt-4">
                   <AdminRadio
@@ -401,8 +401,8 @@ export default class EditItemApp extends React.Component {
             {action === 'edit' && <div>
               <AdminSideQuickLinks
                 AdditionalLinksDiv={<div className="flex flex-wrap">
-                  <SideQuickLink url={PUBLIC_URLS.webItem(itemId, item.title)} text="web item"/>
-                  <SideQuickLink url={PUBLIC_URLS.jsonItem(itemId)} text="json item"/>
+                  <SideQuickLink url={PUBLIC_URLS.webItem(itemId, item.title)} text="网页"/>
+                  <SideQuickLink url={PUBLIC_URLS.jsonItem(itemId)} text="JSON"/>
                 </div>}
               />
               <div className="lh-page-card mt-4 flex justify-center">
@@ -410,14 +410,14 @@ export default class EditItemApp extends React.Component {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    const ok = confirm('Are you going to permanently delete this item?');
+                    const ok = confirm('确定要彻底删除此项目吗？');
                     if (ok) {
                       this.onDelete();
                     }
                   }
                 }><div className="flex items-center text-red-500 text-sm hover:text-brand-light">
                   <TrashIcon className="w-4" />
-                  <div className="ml-1">Delete this item</div>
+                  <div className="ml-1">删除此项目</div>
                   </div>
                 </a>
               </div>
